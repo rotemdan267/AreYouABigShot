@@ -1,0 +1,169 @@
+<h1 class="text-center">האם אתה תותח-על-חלל ?</h1>
+<br>
+<h6>
+    זה נכון שאנחנו בעיצומה של מגיפה עולמית,
+    וממש ברגעים אלו יש מלחמה נוראית באירופה,
+    אבל אנחנו יודעים שמה שבאמת מטריד אותך זו השאלה:
+    "האם אתה תותח-על-חלל??"
+</h6>
+<h6>
+    אנחנו כאן בשבילך. ענה על השאלות הבאות וגלה אחת ולתמיד:
+    "האם אתה תותח-על-חלל?"
+</h6>
+<br><br>
+
+<div class="card" id="canon" [hidden]="canonHidden">
+    <img class="image" src="../../assets/Cannon.png" width="500">
+
+    <div class="card-body">
+        <h5 class="card-title">האם אתה תותח?</h5>
+        <p class="card-text">האם אתה דומה לצינור, קצת עבה, עם פתיל בחלק האחורי שלך, ופתח גדול עגול בחלק הקדמי?</p>
+    </div>
+    <div class="list-group">
+
+        <a href="#AL" type="button" class="list-group-item list-group-item-action"
+            [class.active]="canonButtonIsActive[0]" [class.disabled]="canonDisabled" (click)="handleCanonClick(0,10)">
+            בואנה איך ידעת??
+        </a>
+
+        <a href="#AL" type="button" class="list-group-item list-group-item-action"
+            [class.active]="canonButtonIsActive[1]" [class.disabled]="canonDisabled" (click)="handleCanonClick(1,5)">
+            יש לי פתיל, אבל כל השאר - לא
+        </a>
+
+        <a href="#AL" type="button" class="list-group-item list-group-item-action"
+            [class.active]="canonButtonIsActive[2]" [class.disabled]="canonDisabled" (click)="handleCanonClick(2,1)">
+            לא יודע על מה אתה מדבר
+        </a>
+
+    </div>
+</div>
+
+<br><br><br>
+
+<div class="card" id="AL" [hidden]="ALHidden">
+    <div class="al">
+        <span class="letter">ע </span>
+        <span class="letter-l">ל</span>
+    </div>
+
+    <div class="card-body">
+        <h5 class="card-title">האם אתה על?</h5>
+        <p class="card-text">האם אתה מגדיר את עצמך כאחד שמתחיל ב-ע ונגמר ב-ל?</p>
+    </div>
+    <div class="list-group">
+
+        <a href="#Space" type="button" class="list-group-item list-group-item-action"
+            [class.active]="alButtonIsActive[0]" [class.disabled]="alDisabled" (click)="handleAlClick(0,5)">
+            מתחיל ב-ע. בדרך כלל...
+        </a>
+
+        <a href="#Space" type="button" class="list-group-item list-group-item-action"
+            [class.active]="alButtonIsActive[1]" [class.disabled]="alDisabled" (click)="handleAlClick(1,1)">
+            אפשר עוד אותיות באמצע?
+        </a>
+
+        <a href="#Space" type="button" class="list-group-item list-group-item-action"
+            [class.active]="alButtonIsActive[2]" [class.disabled]="alDisabled" (click)="handleAlClick(2,1)">
+            בכלל בכלל לא
+        </a>
+
+        <a href="#Space" type="button" class="list-group-item list-group-item-action"
+            [class.active]="alButtonIsActive[3]" [class.disabled]="alDisabled" (click)="handleAlClick(3,10)">
+            בול!
+        </a>
+
+    </div>
+</div>
+
+<br><br><br>
+
+<div class="card" id="Space" [hidden]="spaceHidden">
+    <img class="image" src="../../assets/AliensColour.svg" width="500">
+
+    <div class="card-body">
+        <h5 class="card-title">האם אתה חלל?</h5>
+        <p class="card-text">האם אתה ריק אינסופי שמתפשט ברחבי הקוסמוס ללא הפסקה ומכיל או לא מכיל צורות חיים ירוקות
+            מוזרות?</p>
+    </div>
+    <div class="list-group">
+
+        <a href="#Reveal?" type="button" class="list-group-item list-group-item-action"
+            [class.active]="spaceButtonIsActive[0]" [class.disabled]="spaceDisabled" (click)="handleSpaceClick(0,1)">
+            מה..??..
+        </a>
+
+        <a href="#Reveal?" type="button" class="list-group-item list-group-item-action"
+            [class.active]="spaceButtonIsActive[1]" [class.disabled]="spaceDisabled" (click)="handleSpaceClick(1,5)">
+            מרקלר גזורפזורפ מרקלר
+        </a>
+
+        <a href="#Reveal?" type="button" class="list-group-item list-group-item-action"
+            [class.active]="spaceButtonIsActive[2]" [class.disabled]="spaceDisabled" (click)="handleSpaceClick(2,10)">
+            כן! כן! אני זה!
+        </a>
+
+    </div>
+</div>
+
+<br><br><br>
+
+<div class="card text-center" id="Reveal?" [hidden]="revealHidden">
+    <div class="card-header">
+        האם אתה מוכן לגלות האם אתה תותח-על-חלל??
+    </div>
+    <div class="card-body">
+        <a href="#result" class="btn btn-primary" (click)="handleRevealClick()">תגלו לי!!!</a>
+    </div>
+</div>
+
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+
+<div *ngIf="result > 14 && result < 29; then ifBlock else elseBlock"> </div>
+
+<ng-template #ifBlock>
+    <div class="text-center" id="result" [hidden]="resultHidden">
+
+        <img class="image" src="../../assets/EricOrtner_Cannon.png">
+        <br><br>
+        <h1 class="in-the-middle">אתה באמצע. אולי תותח אולי חלל. אבל אתה בטח לא תותח-על-חלל</h1>
+        <br><br>
+        <img class="image" src="../../assets/Space-The-Initial-Frontier.png">
+        <br><br><br>
+        <a class="btn btn-primary" (click)="handleSaveResults()">שמור את התוצאה שלי</a>
+        <br><br>
+        <a href="#canon" class="btn btn-primary" (click)="handleReset()">התחל את השאלון מהתחלה</a>
+
+
+    </div>
+</ng-template>
+
+<ng-template #elseBlock>
+    <div class="text-center" id="result" [hidden]="resultHidden">
+
+        <h1 [class.big-shot]="result === 30">{{resultDetails.content}}</h1>
+        <img class="image" src={{resultDetails.source}}>
+        <br><br><br>
+        <a class="btn btn-primary" (click)="handleSaveResults()">שמור את התוצאה שלי</a>
+        <br><br>
+        <a href="#canon" class="btn btn-primary" (click)="handleReset()">התחל את השאלון מהתחלה</a>
+
+
+    </div>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+
+</ng-template>
+
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
