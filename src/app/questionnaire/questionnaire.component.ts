@@ -76,11 +76,11 @@ export class QuestionnaireComponent implements OnInit {
   setResultDetails() {
     if (this.result === 30) {
       this.resultDetails.content = 'תותח-על-חלל !!!!!';
-      this.resultDetails.source = '../../assets/space-canon.gif';
+      this.resultDetails.source = 'https://rotemdan267.github.io/AreYouABigShot/assets/space-canon.gif';
     }
     else {
       this.resultDetails.content = 'לא. פשוט לא.';
-      this.resultDetails.source = '../../assets/no.png';
+      this.resultDetails.source = 'https://rotemdan267.github.io/AreYouABigShot/assets/no.png';
     }
   }
 
